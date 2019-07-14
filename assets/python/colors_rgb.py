@@ -46,7 +46,7 @@ def convertToJSON(path, pic):
 for year in range(2008, 2018):
     
     # Set up path to image and get list of all image names within each
-    path = "E:/Website Projects/gallerytimeless/assets/images/paintings/" + str(year) + "/"
+    path = "C:/Users/Leo/Documents/GitHub/gallerytimeless/assets/images/paintings/" + str(year) + "/"
     pictures = os.listdir(path)
 
     # For each image
@@ -74,7 +74,7 @@ for i in range(0, len(tmp)):
 json_array  = "var colorsRGB = " + json_array 
 
 # Write string to .json file
-with open("E:/Website Projects/gallerytimeless/assets/images/colors_rgb.json", "w") as outfile:
+with open("C:/Users/Leo/Documents/GitHub/gallerytimeless/assets/images/colors_rgb.json", "w") as outfile:
     outfile.write(json_array )
 
 

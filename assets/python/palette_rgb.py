@@ -16,7 +16,7 @@ json_array = []
 for year in range(2008, 2018):
     
     # Set up path to image and get list of all image names within each
-    path = "E:/Website Projects/gallerytimeless/assets/images/paintings/" + str(year) + "/"
+    path = "C:/Users/Leo/Documents/GitHub/gallerytimeless/assets/images/paintings/" + str(year) + "/"
     pictures = os.listdir(path)
 
     # For each image
@@ -72,8 +72,8 @@ for i in range(0, len(json_array)):
         final = final + json_array[i] + ", "
         
 # Add variable initialization at the beginning        
-final = "var palette = " + final
+final = "var paletteRGB = " + final
 
 # Write string to .json file
-with open("E:/Website Projects/gallerytimeless/assets/images/palette.json", "w") as outfile:
+with open("C:/Users/Leo/Documents/GitHub/gallerytimeless/assets/images/palette.json", "w") as outfile:
     outfile.write(final)

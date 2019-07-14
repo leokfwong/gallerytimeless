@@ -316,6 +316,12 @@ var gallery = [{
     "title": "New York",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting"
+}, {
+    "id": "054",
+    "year": "2017",
+    "title": "Girl Portrait",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
 }]
 
 function generateColorChart(id) {
