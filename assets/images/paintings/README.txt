@@ -1,0 +1,1 @@
+The full folder contains all the paintings in larger size formats. Need to remove them otherwise it takes forever to load.

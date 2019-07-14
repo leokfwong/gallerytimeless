@@ -1,0 +1,112 @@
+/* Responsive Grid Media Queries - 1280, 1024, 768, 480
+1280-1024   - desktop (default grid)
+1024-768    - tablet landscape
+768-480     - tablet
+480-less    - phone landscape & smaller */
+@media all and (min-width: 1024px) and (max-width: 1280px) { }
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .exhibit-content {
+    flex-direction: column;
+  }
+  .exhibit-painting {
+    flex-basis: 70%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .exhibit-description {
+    align-items: center;
+    flex-basis: 30%;
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) { }
+
+@media all and (max-width: 480px) {
+  #exhibit-nav-sidebar {
+    width: 9%;
+  }
+  .exhibit-content {
+    flex-direction: column;
+    height: 100%;
+    width: 85%;
+  }
+  .exhibit-title {
+    font-size: 175%;
+  }
+  .exhibit-painting {
+    flex-basis: 50%;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .exhibit-painting img {
+    max-width: 61%;
+  }
+  .exhibit-painting-enlarge {
+    padding: 5px 0 15px 0;
+  }
+  .exhibit-description {
+    align-items: center;
+    flex-basis: 50%;
+    justify-content: flex-start;
+  }
+  .exhibit-note {
+    display: none;
+    font-size: 3.8vmin;
+  }
+  .exhibit-palette {
+    display: none !important;
+  }
+  .exhibit-rgb {
+    display: none;
+  }
+  .exhibit-plot {
+    margin-top: 20px;
+  }
+  #back-to-top {
+    width: 15vmin;
+    height: 15vmin;
+  }
+  #exhibit-painting-large img {
+    width: 90%;
+    height: auto;
+}
+}
+
+
+/* Portrait */
+@media screen and (orientation:portrait) { /* Portrait styles here */ }
+/* Landscape */
+@media screen and (orientation:landscape) { /* Landscape styles here */ }
+
+
+/* CSS for iPhone, iPad, and Retina Displays */
+
+/* Non-Retina */
+@media screen and (-webkit-max-device-pixel-ratio: 1) {
+}
+
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+}
+
+/* iPhone Portrait */
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+}
+
+/* iPhone Landscape */
+@media screen and (max-device-width: 480px) and (orientation:landscape) {
+}
+
+/* iPad Portrait */
+@media screen and (min-device-width: 481px) and (orientation:portrait) {
+}
+
+/* iPad Landscape */
+@media screen and (min-device-width: 481px) and (orientation:landscape) {
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />

@@ -1,0 +1,337 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   */
+
+   html, body, div, span, applet, object, iframe,
+   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+   a, abbr, acronym, address, big, cite, code,
+   del, dfn, em, img, ins, kbd, q, s, samp,
+   small, strike, strong, sub, sup, tt, var,
+   b, u, i, center,
+   dl, dt, dd, ol, ul, li,
+   fieldset, form, label, legend,
+   table, caption, tbody, tfoot, thead, tr, th, td,
+   article, aside, canvas, details, embed,
+   figure, figcaption, footer, header, hgroup,
+   menu, nav, output, ruby, section, summary,
+   time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    cursor: default;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+img[data-src] {
+  opacity: 0;
+}
+#loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 2;
+    display: none;
+    background: black;
+    -webkit-animation: Fade 1.5s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: Fade 1.5s; /* Firefox < 16 */
+    -ms-animation: Fade 1.5s; /* Internet Explorer */
+    -o-animation: Fade 1.5s; /* Opera < 12.1 */
+    animation: Fade 1.5s;
+}
+@keyframes Fade {
+    0% { opacity: 0; }
+    25% { opacity: 1; }
+    75% {opacity: 1; }
+    100% {opacity: 0; }
+}
+#painting-overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    display: none;
+    background: rgba(0, 0, 0, .9);
+}
+#painting-overlay-close {
+    width: 5vmin;
+    height: 5vmin;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: white;
+    border-radius: 100%;
+    font-family: "Raleway", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    font-size: 125%;
+}
+#painting-overlay-close:hover {
+    color: #2ECC71;
+}
+#exhibit-painting-large {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 90%;
+}
+.exhibit-painting-large-img-landscape {
+    width: 100%;
+}
+.exhibit-painting-large-img-portrait {
+    height: 100%;
+}
+@font-face {
+    font-family: Stellar;
+    src: url(../font/Stellar/Stellar-Regular.eot),
+    url(../font/Stellar/Stellar-Regular.otf);
+}
+#wrapper {
+    width: 100%;
+    height: 100%;
+    background: lightgrey;
+}
+#logo-signature {
+    display: none;
+    position: fixed;
+    font-family: "Stellar";
+    letter-spacing: .5vmin;
+    font-size: 2.5vmin;
+    left: 0px;
+    bottom: 0px;
+    color: white;
+    z-index: 1;
+    margin: 4vmin;
+    opacity: .42;
+    cursor: default;
+}
+#widescreen {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-attachment: fixed;
+}
+#widescreen-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(0, 0, 0, .69);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#banner {
+    font-size: 15vmin;
+    font-family: "Stellar";
+    letter-spacing: 3vmin;
+    color: white;
+    -webkit-animation: textFadeIn 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: textFadeIn 2s; /* Firefox < 16 */
+    -ms-animation: textFadeIn 2s; /* Internet Explorer */
+    -o-animation: textFadeIn 2s; /* Opera < 12.1 */
+    animation: textFadeIn 2s;
+}
+@keyframes textFadeIn {
+    from { margin-bottom: 2%; opacity: 0; }
+    to   { margin-bottom: 0; opacity: 1; }
+}
+#exhibit-container {
+    width: 100%;
+    height: 100%;
+}
+#exhibit-nav-sidebar {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 20%;
+    left: 3%;
+    height: 60%;
+    width: 3%;
+    z-index: 1;
+    font-family: 'Raleway', sans-serif;
+    cursor: default;
+}
+.year {
+    color: white;
+    font-size: 75%;
+    opacity: .5;
+}
+.year:hover {
+    color: #2ECC71;
+}
+.year-selected {
+    font-size: 125%;
+    /*color: #2ECC71;*/
+    opacity: 1;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    -ms-transition: all .3s ease-in;
+}
+.exhibit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: grey;
+    position: relative;
+    background-size: cover;
+}
+.exhibit-overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .72);
+}
+.exhibit-content {
+    position: absolute;
+    display: flex;
+    top: 0px;
+    width: 91%;
+    height: 100%;
+    right: 0;
+}
+.exhibit-painting {
+    display: flex;
+    flex-basis: 60%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.exhibit-painting img {
+    box-shadow: .5vmax .5vmax 7px black;
+}
+.exhibit-portrait img {
+    width: 50%;
+}
+.exhibit-landscape img {
+    width: 75%;
+}
+.exhibit-painting-enlarge {
+    padding: 15px;
+    color: grey;
+    font-family: 'Tajawal', sans-serif;
+}
+.exhibit-description {
+    color: white;
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    font-family: 'Tajawal', sans-serif;
+}
+.description-odd {
+    order: -1;
+    align-items: flex-end;
+}
+.description-even {
+    order: 0;
+    align-items: flex-start;
+}
+.exhibit-description-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*align-items: center;*/
+    width: 70%;
+}
+.exhibit-title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 250%;
+    margin-bottom: 20px;
+}
+.exhibit-type, .exhibit-year, .exhibit-size {
+    font-size: 115%;
+}
+.exhibit-palette {
+    margin-top: 20px;
+}
+.exhibit-note {
+    margin-top: 20px;
+}
+.chart-container {
+    width: 192px;
+    height: 192px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.exhibit-rgb {
+    margin-top: 15px;
+    height: 42px;
+    font-size: 150%;
+    color: lightgrey;
+    display: flex;
+}
+#selected-rgb-pixel {
+    margin-right: 5px;
+}
+.exhibit-plot-button {
+    background: none;
+    border: solid 2px #2ECC71;
+    color: #2ECC71;
+    cursor: pointer;
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+}
+.exhibit-plot-button:hover {
+    background: #2ECC71;
+    color: black;
+}
+
+#back-to-top {
+    display: none;
+    width: 7vmin;
+    height: 7vmin;
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#back-to-top img {
+    height: 60%;
+}
