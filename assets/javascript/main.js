@@ -322,6 +322,72 @@ var gallery = [{
     "title": "Girl Portrait",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting"
+}, {
+    "id": "055",
+    "year": "2017",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
+}, {
+    "id": "056",
+    "year": "2017",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
+}, {
+    "id": "057",
+    "year": "2017",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
+}, {
+    "id": "058",
+    "year": "2018",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
+}, {
+    "id": "059",
+    "year": "2018",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
+}, {
+    "id": "060",
+    "year": "2018",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
+}, {
+    "id": "061",
+    "year": "2018",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
+}, {
+    "id": "062",
+    "year": "2018",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
+}, {
+    "id": "063",
+    "year": "2018",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
+}, {
+    "id": "064",
+    "year": "2019",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
+}, {
+    "id": "065",
+    "year": "2019",
+    "title": "Title",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting"
 }]
 
 function generateColorChart(id) {
@@ -376,7 +442,7 @@ function generateColorChart(id) {
 
     }
 
-    return(chart);
+    return (chart);
 }
 
 function findIndexPainting(id) {
@@ -384,7 +450,7 @@ function findIndexPainting(id) {
     for (let i = 0; i < colorsRGB.length; i++) {
 
         if (parseInt(colorsRGB[i].id) == id) {
-            return(i);
+            return (i);
         } else {
             //console.log("Error!! Couldn't find.");
         }
@@ -446,11 +512,11 @@ window.onload = function() {
         let previousYear = 2018;
 
         // Iterate through each painting, starting from the most recent
-        for (let i = gallery.length - 1; i >= 0 ; i--) {
+        for (let i = gallery.length - 1; i >= 0; i--) {
 
             // Create an exhibit for each
             let exhibit = document.createElement("div");
-            exhibit.id = "exhibit-" + (i+1);
+            exhibit.id = "exhibit-" + (i + 1);
             if (i == gallery.length - 1) {
                 exhibit.className = "exhibit latest-exhibit";
             } else {
@@ -464,19 +530,19 @@ window.onload = function() {
 
             // Create overlay to dim background
             let overlay = document.createElement("div");
-            overlay.id = "exhibit-overlay-" + (i+1);
+            overlay.id = "exhibit-overlay-" + (i + 1);
             overlay.className = "exhibit-overlay";
             exhibit.appendChild(overlay);
 
             // Create content div
             let content = document.createElement("div");
-            content.id = "exhibit-content-" + (i+1);
+            content.id = "exhibit-content-" + (i + 1);
             content.className = "exhibit-content";
             exhibit.appendChild(content);
 
             // Create painting div
             let painting = document.createElement("div");
-            painting.id = "exhibit-painting-" + (i+1);
+            painting.id = "exhibit-painting-" + (i + 1);
             painting.className = "exhibit-painting exhibit-" + gallery[i].orientation;
 
             content.appendChild(painting);
@@ -513,57 +579,57 @@ window.onload = function() {
 
             // Create description div
             let description = document.createElement("div");
-            description.id = "exhibit-description-" + (i+1);
+            description.id = "exhibit-description-" + (i + 1);
             description.className = "exhibit-description";
             content.appendChild(description);
 
             let descriptionContent = document.createElement("div");
-            descriptionContent.id = "exhibit-description-content-" + (i+1);
+            descriptionContent.id = "exhibit-description-content-" + (i + 1);
             descriptionContent.className = "exhibit-description-content";
             description.appendChild(descriptionContent);
 
             // Create title div
             let title = document.createElement("div");
-            title.id = "exhibit-title-" + (i+1);
+            title.id = "exhibit-title-" + (i + 1);
             title.className = "exhibit-title";
             descriptionContent.appendChild(title);
             title.innerHTML = gallery[i].title;
 
             // Create type div
             let type = document.createElement("div");
-            type.id = "exhibit-type-" + (i+1);
+            type.id = "exhibit-type-" + (i + 1);
             type.className = "exhibit-type";
             descriptionContent.appendChild(type);
             type.innerHTML = gallery[i].type;
 
             // Create year div
             let year = document.createElement("div");
-            year.id = "exhibit-year-" + (i+1);
+            year.id = "exhibit-year-" + (i + 1);
             year.className = "exhibit-year";
             descriptionContent.appendChild(year);
             year.innerHTML = gallery[i].year;
 
             // Create size div
             let size = document.createElement("div");
-            size.id = "exhibit-size-" + (i+1);
+            size.id = "exhibit-size-" + (i + 1);
             size.className = "exhibit-size";
             descriptionContent.appendChild(size);
             size.innerHTML = gallery[i].size;
 
             // Create palette div
             let palette = document.createElement("div");
-            palette.id = "exhibit-palette-" + (i+1);
+            palette.id = "exhibit-palette-" + (i + 1);
             palette.className = "exhibit-palette";
             palette.style.display = "flex";
             descriptionContent.appendChild(palette);
 
             // Iterate through palette and find the write id
-            for (let i=0; i < paletteRGB.length; i++) {
+            for (let i = 0; i < paletteRGB.length; i++) {
 
-                if (parseInt(paletteRGB[i].id) == (id+1)) {
+                if (parseInt(paletteRGB[i].id) == (id + 1)) {
 
                     // Iterate through each 5 clustered color
-                    for (let y=0; y < 5; y++) {
+                    for (let y = 0; y < 5; y++) {
 
                         // Get RGB values
                         let red = paletteRGB[i].R[y];
@@ -572,7 +638,7 @@ window.onload = function() {
 
                         // Create div for each clustered color
                         let color = document.createElement("div");
-                        color.id = "exhibit-palette-color-" + (y+1);
+                        color.id = "exhibit-palette-color-" + (y + 1);
                         color.className = "exhibit-palette-color";
                         color.style.width = "25px";
                         color.style.height = "25px";
@@ -587,25 +653,25 @@ window.onload = function() {
 
             // Create note div
             let note = document.createElement("div");
-            note.id = "exhibit-note-" + (i+1);
+            note.id = "exhibit-note-" + (i + 1);
             note.className = "exhibit-note";
             descriptionContent.appendChild(note);
             //note.innerHTML = gallery[i].description;
-            let chart = generateColorChart(i+1);
+            let chart = generateColorChart(i + 1);
             note.appendChild(chart);
 
             let rgb = document.createElement("div");
-            rgb.id = "exhibit-rgb-" + (i+1);
+            rgb.id = "exhibit-rgb-" + (i + 1);
             rgb.className = "exhibit-rgb";
             descriptionContent.appendChild(rgb);
 
             let plot = document.createElement("div");
-            plot.id = "exhibit-plot-" + (i+1);
+            plot.id = "exhibit-plot-" + (i + 1);
             plot.className = "exhibit-plot";
             descriptionContent.appendChild(plot);
 
             let showPlotButton = document.createElement("div");
-            showPlotButton.id = "exhibit-plot-button-" + (i+1);
+            showPlotButton.id = "exhibit-plot-button-" + (i + 1);
             showPlotButton.className = "exhibit-plot-button";
             plot.appendChild(showPlotButton);
             showPlotButton.innerHTML = "Show Plot";
@@ -646,7 +712,7 @@ window.onload = function() {
     });
 
     // Close painting overlay button
-    document.getElementById("painting-overlay-close").addEventListener("click", function(){
+    document.getElementById("painting-overlay-close").addEventListener("click", function() {
         let overlay = document.getElementById("painting-overlay");
         overlay.style.display = "none";
         let paintingLarge = document.getElementById("exhibit-painting-large");
@@ -665,7 +731,7 @@ window.onload = function() {
         let sidebar = document.getElementById("exhibit-nav-sidebar");
 
         // Itereate through years of activity
-        for (let i = 2018; i >= 2008; i--) {
+        for (let i = 2019; i >= 2008; i--) {
 
             (function() {
 
@@ -681,10 +747,10 @@ window.onload = function() {
                     // Iterate through year dictionary to find corresponding div to scroll to
                     for (let j = 0; j < yearDictionary.length; j++) {
                         if (yearDictionary[j].year == yr) {
-                            document.getElementById("loader").style.display="flex";
-                            setTimeout(function () {
-                                document.getElementById("loader").style.opacity="0";
-                                document.getElementById("loader").style.display="none";
+                            document.getElementById("loader").style.display = "flex";
+                            setTimeout(function() {
+                                document.getElementById("loader").style.opacity = "0";
+                                document.getElementById("loader").style.display = "none";
                             }, 1400);
                             let destinationDiv = document.getElementById("exhibit-" + parseInt(yearDictionary[j].anchor));
                             scrollToMyDiv(destinationDiv, 1000);
@@ -752,16 +818,18 @@ window.onscroll = function() {
 /* Function allows  */
 function animate(elem, time) {
     console.log(document.documentElement.scrollTop, time);
-    if(!elem) return;
+    if (!elem) return;
     var to = elem.offsetTop;
     var from = document.documentElement.scrollTop; // window.scrollY would do the trick in modern browsers
     var start = new Date().getTime(),
-    timer = setInterval(function() {
-        var step = Math.min(1,(new Date().getTime()-start)/time);
-        window.scrollTo(0,(from+step*(to-from))+1);
-        if( step == 1){ clearInterval(timer);};
-    },25);
-    window.scrollTo(0,(from+1));
+        timer = setInterval(function() {
+            var step = Math.min(1, (new Date().getTime() - start) / time);
+            window.scrollTo(0, (from + step * (to - from)) + 1);
+            if (step == 1) {
+                clearInterval(timer);
+            };
+        }, 25);
+    window.scrollTo(0, (from + 1));
 }
 
 function scrollToMyDiv(div, speed) {
@@ -785,51 +853,56 @@ function scrollToMyDiv(div, speed) {
     animate(divVal, speed);
 }
 
-
 (function() {
 
     document.addEventListener('wheel', findScrollDirectionOtherBrowsers);
 
     var delay = false;
 
-    function findScrollDirectionOtherBrowsers(event){
+    function findScrollDirectionOtherBrowsers(event) {
         event.preventDefault();
         var delta;
 
         console.log("DELAY:", delay);
-        if(delay) return;
+        if (delay) return;
 
         delay = true;
-        setTimeout(function(){delay = false}, 1000)
+        setTimeout(function() {
+            delay = false
+        }, 1000)
 
-        if (event.wheelDelta){
+        if (event.wheelDelta) {
             delta = event.wheelDelta;
-        }else{
+        } else {
             delta = -1 * event.deltaY;
         }
 
         let exhibit = document.getElementsByClassName("exhibit");
 
-        if (delta < 0){
+        if (delta < 0) {
             console.log("DOWN");
-            for(var i = 0; i < exhibit.length; i++) {
+            for (var i = 0; i < exhibit.length; i++) {
                 var t = exhibit[i].getClientRects()[0].top;
-                if (t >= 40) break;
+                if (t >= 10) {
+                    disableScroll();
+                    break;
+                }
             }
-        } else if (delta > 0){
+        } else if (delta > 0) {
             console.log("UP");
-            for(var i = exhibit.length-1 ; i >= 0 ; i--) {
+            for (var i = exhibit.length - 1; i >= 0; i--) {
                 var t = exhibit[i].getClientRects()[0].top;
-                if(t < -20) break;
+                if (t < -10) {
+                    disableScroll();
+                    break;
+                }
             }
         }
 
         console.log(i);
-        if(i >= 0 && i < exhibit.length) {
+        if (i >= 0 && i < exhibit.length) {
 
             scrollToMyDiv(exhibit[i], 500);
-
-
 
         } else if (i < 0) {
 
@@ -839,46 +912,79 @@ function scrollToMyDiv(div, speed) {
     }
 })();
 
-// TODO IMPLEMENT SWIPE
-document.addEventListener('touchstart', handleTouchStart, false);
-document.addEventListener('touchmove', handleTouchMove, false);
+(function() {
 
-var xDown = null;
-var yDown = null;
+    // TODO IMPLEMENT SWIPE
+    document.addEventListener('touchstart', handleTouchStart, false);
+    document.addEventListener('touchmove', handleTouchMove, false);
 
-function handleTouchStart(evt) {
-    xDown = evt.touches[0].clientX;
-    yDown = evt.touches[0].clientY;
-};
+    var delay = false;
 
-function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
-        return;
-    }
+    var xDown = null;
+    var yDown = null;
 
-    var xUp = evt.touches[0].clientX;
-    var yUp = evt.touches[0].clientY;
+    function handleTouchStart(evt) {
+        xDown = evt.touches[0].clientX;
+        yDown = evt.touches[0].clientY;
+    };
 
-    var xDiff = xDown - xUp;
-    var yDiff = yDown - yUp;
+    function handleTouchMove(evt) {
 
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
-        if ( xDiff > 0 ) {
-            /* left swipe */
-        } else {
-            /* right swipe */
+        console.log("DELAY:", delay);
+        if (delay) {
+            disableScroll();
+            return;
         }
-    } else {
-        if ( yDiff > 0 ) {
+
+        delay = true;
+        setTimeout(function() {
+            delay = false
+        }, 1000)
+
+        if (!xDown || !yDown) {
+            return;
+        }
+        var yUp = evt.touches[0].clientY;
+
+        var yDiff = yDown - yUp;
+
+        let exhibit = document.getElementsByClassName("exhibit");
+
+        if (yDiff > 0) {
             console.log("UP SWIPE");
+            for (var i = 0; i < exhibit.length; i++) {
+                var t = exhibit[i].getClientRects()[0].top;
+                if (t >= 20) {
+                    disableScroll();
+                    break;
+                }
+            }
             /* up swipe */
+            //scrollToMyDiv(exhibit[5], 500);
         } else {
             console.log("DOWN SWIPE");
+            for (var i = exhibit.length - 1; i >= 0; i--) {
+                var t = exhibit[i].getClientRects()[0].top;
+                if (t < -20) {
+                    disableScroll();
+                    break;
+                }
+            }
             /* down swipe */
         }
-    }
-    /* reset values */
-    xDown = null;
-    yDown = null;
-};
 
+        if (i >= 0 && i < exhibit.length) {
+
+            scrollToMyDiv(exhibit[i], 500);
+
+        } else if (i < 0) {
+
+            scrollToMyDiv(document.getElementById("widescreen"), 700);
+
+        }
+
+        /* reset values */
+        xDown = null;
+        yDown = null;
+    };
+})();

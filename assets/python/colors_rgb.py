@@ -43,7 +43,7 @@ def convertToJSON(path, pic):
     
 
 # Iterate through every folder to fetch images
-for year in range(2008, 2018):
+for year in range(2008, 2020):
     
     # Set up path to image and get list of all image names within each
     path = "C:/Users/Leo/Documents/GitHub/gallerytimeless/assets/images/paintings/" + str(year) + "/"
