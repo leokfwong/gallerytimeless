@@ -929,10 +929,8 @@ function scrollToMyDiv(div, speed) {
     };
 
     function handleTouchMove(evt) {
-
         console.log("DELAY:", delay);
         if (delay) {
-            disableScroll();
             return;
         }
 
