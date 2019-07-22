@@ -860,7 +860,7 @@ function scrollToMyDiv(div, speed) {
     var delay = false;
 
     function findScrollDirectionOtherBrowsers(event) {
-        event.preventDefault();
+        //event.preventDefault();
         var delta;
 
         console.log("DELAY:", delay);
@@ -884,7 +884,6 @@ function scrollToMyDiv(div, speed) {
             for (var i = 0; i < exhibit.length; i++) {
                 var t = exhibit[i].getClientRects()[0].top;
                 if (t >= 10) {
-                    disableScroll();
                     break;
                 }
             }
@@ -893,7 +892,6 @@ function scrollToMyDiv(div, speed) {
             for (var i = exhibit.length - 1; i >= 0; i--) {
                 var t = exhibit[i].getClientRects()[0].top;
                 if (t < -10) {
-                    disableScroll();
                     break;
                 }
             }
@@ -953,22 +951,17 @@ function scrollToMyDiv(div, speed) {
             for (var i = 0; i < exhibit.length; i++) {
                 var t = exhibit[i].getClientRects()[0].top;
                 if (t >= 20) {
-                    disableScroll();
                     break;
                 }
             }
-            /* up swipe */
-            //scrollToMyDiv(exhibit[5], 500);
         } else {
             console.log("DOWN SWIPE");
             for (var i = exhibit.length - 1; i >= 0; i--) {
                 var t = exhibit[i].getClientRects()[0].top;
                 if (t < -20) {
-                    disableScroll();
                     break;
                 }
             }
-            /* down swipe */
         }
 
         if (i >= 0 && i < exhibit.length) {
@@ -981,7 +974,6 @@ function scrollToMyDiv(div, speed) {
 
         }
 
-        /* reset values */
         xDown = null;
         yDown = null;
     };
