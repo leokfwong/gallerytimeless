@@ -78,7 +78,7 @@ var gallery = [{
 }, {
     "id": "012",
     "year": "2009",
-    "title": "012",
+    "title": "Portrait of Man",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
@@ -113,7 +113,7 @@ var gallery = [{
 }, {
     "id": "017",
     "year": "2011",
-    "title": "017",
+    "title": "Shade",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
@@ -127,7 +127,7 @@ var gallery = [{
 }, {
     "id": "019",
     "year": "2011",
-    "title": "019",
+    "title": "Wisdom",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
@@ -176,7 +176,7 @@ var gallery = [{
 }, {
     "id": "026",
     "year": "2012",
-    "title": "",
+    "title": "Portrait of Man",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
@@ -274,7 +274,7 @@ var gallery = [{
 }, {
     "id": "040",
     "year": "2015",
-    "title": "040",
+    "title": "Waves",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
@@ -309,7 +309,7 @@ var gallery = [{
 }, {
     "id": "045",
     "year": "2015",
-    "title": "Autumn",
+    "title": "Autumn in Montreal",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
@@ -330,7 +330,7 @@ var gallery = [{
 }, {
     "id": "048",
     "year": "2016",
-    "title": "048",
+    "title": "Old Montreal",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
@@ -386,42 +386,42 @@ var gallery = [{
 }, {
     "id": "056",
     "year": "2017",
-    "title": "Title",
+    "title": "Swamp",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
 }, {
     "id": "057",
     "year": "2017",
-    "title": "Title",
+    "title": "Old Champlain Bridge",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
 }, {
     "id": "058",
     "year": "2018",
-    "title": "Title",
+    "title": "McGill Statue",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
 }, {
     "id": "059",
     "year": "2018",
-    "title": "Title",
+    "title": "Sunset by the Shore",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
 }, {
     "id": "060",
     "year": "2018",
-    "title": "Title",
+    "title": "Rural China",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
 }, {
     "id": "061",
     "year": "2018",
-    "title": "Title",
+    "title": "Self-portrait",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
@@ -435,21 +435,21 @@ var gallery = [{
 }, {
     "id": "063",
     "year": "2018",
-    "title": "Title",
+    "title": "Percé Rock",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
 }, {
     "id": "064",
     "year": "2019",
-    "title": "Title",
+    "title": "East Coast Sunset",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
 }, {
     "id": "065",
     "year": "2019",
-    "title": "Title",
+    "title": "Nigara Falls",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
@@ -778,8 +778,6 @@ window.onload = function() {
         painting.className = "exhibit-painting exhibit-" + img.getAttribute("data-orientation");
 
         img.onload = function() {
-
-            console.log(img);
             img.removeAttribute("data-src");
         };
     });
