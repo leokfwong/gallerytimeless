@@ -526,7 +526,6 @@ window.onload = function() {
 
             // Append exhibit to container and set up background image
             document.getElementById("exhibit-container").appendChild(exhibit);
-            //exhibit.style.backgroundImage = "url(assets/images/paintings/" + gallery[i].year + "/" + gallery[i].id + "-min.png)";
 
             // Create overlay to dim background
             let overlay = document.createElement("div");
@@ -546,7 +545,7 @@ window.onload = function() {
             painting.className = "exhibit-painting exhibit-" + gallery[i].orientation;
 
             content.appendChild(painting);
-            painting.innerHTML = "<img data-src='assets/images/paintings/" + gallery[i].year + "/" + gallery[i].id + "-min.png'>";
+            painting.innerHTML = "<img data-src='assets/images/paintings/" + gallery[i].year + "/" + gallery[i].id + "-min.png' data-id='" + gallery[i].id + "'>";
 
             let enlarge = document.createElement("div");
             enlarge.className = "exhibit-painting-enlarge";
@@ -564,7 +563,7 @@ window.onload = function() {
 
                 console.log("Painting clicked");
                 paintingOverlay.style.display = "flex";
-                //argePainting.innerHTML = "<img src='assets/images/paintings/" + gallery[id].year + "/" + gallery[id].id + "-min.png'>";
+                largePainting.innerHTML = "<img src='assets/images/paintings/" + gallery[id].year + "/" + gallery[id].id + "-min.png'>";
                 let orientation;
 
                 if (((window.innerHeight * 0.8) * gallery[id].imgWidth / gallery[id].imgHeight) > ((0.9) * window.innerWidth)) {
@@ -679,7 +678,7 @@ window.onload = function() {
             showPlotButton.addEventListener("click", function() {
                 console.log("Plot clicked");
                 paintingOverlay.style.display = "flex";
-                //largePainting.innerHTML = "<img src='assets/images/plots/" + gallery[id].id + "_plot.png'>";
+                largePainting.innerHTML = "<img src='assets/images/plots/" + gallery[id].id + "_plot.png'>";
             });
 
 
@@ -705,7 +704,12 @@ window.onload = function() {
 
     // Lazy load for images
     [].forEach.call(document.querySelectorAll("img[data-src]"), function(img) {
+
         img.setAttribute("src", img.getAttribute("data-src"));
+
+        let exhibit = document.getElementById("exhibit-" + parseInt(img.getAttribute("data-id")));
+        exhibit.style.backgroundImage = "url(" + img.getAttribute("data-src") + ")";
+
         img.onload = function() {
             img.removeAttribute("data-src");
         };
