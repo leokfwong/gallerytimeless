@@ -449,7 +449,7 @@ var gallery = [{
 }, {
     "id": "065",
     "year": "2019",
-    "title": "Nigara Falls",
+    "title": "Niagara Falls",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
