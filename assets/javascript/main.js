@@ -473,7 +473,7 @@ function getPaintingDimensions() {
         let img = new Image();
 
         // Define source of painting image (where to fetch image file) and data-id.
-        img.src = "assets/images/paintings/" + gallery[i].year + "/" + gallery[i].id + "-min.png";
+        img.setAttribute("data-src", "assets/images/paintings/" + gallery[i].year + "/" + gallery[i].id + "-min.png");
         img.setAttribute("data-id", gallery[i].id);
 
         // On image load
@@ -526,7 +526,7 @@ window.onload = function() {
 
             // Append exhibit to container and set up background image
             document.getElementById("exhibit-container").appendChild(exhibit);
-            exhibit.style.backgroundImage = "url(assets/images/paintings/" + gallery[i].year + "/" + gallery[i].id + "-min.png)";
+            //exhibit.style.backgroundImage = "url(assets/images/paintings/" + gallery[i].year + "/" + gallery[i].id + "-min.png)";
 
             // Create overlay to dim background
             let overlay = document.createElement("div");
