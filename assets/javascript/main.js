@@ -564,7 +564,7 @@ window.onload = function() {
 
                 console.log("Painting clicked");
                 paintingOverlay.style.display = "flex";
-                largePainting.innerHTML = "<img src='assets/images/paintings/" + gallery[id].year + "/" + gallery[id].id + "-min.png'>";
+                //argePainting.innerHTML = "<img src='assets/images/paintings/" + gallery[id].year + "/" + gallery[id].id + "-min.png'>";
                 let orientation;
 
                 if (((window.innerHeight * 0.8) * gallery[id].imgWidth / gallery[id].imgHeight) > ((0.9) * window.innerWidth)) {
@@ -679,7 +679,7 @@ window.onload = function() {
             showPlotButton.addEventListener("click", function() {
                 console.log("Plot clicked");
                 paintingOverlay.style.display = "flex";
-                largePainting.innerHTML = "<img src='assets/images/plots/" + gallery[id].id + "_plot.png'>";
+                //largePainting.innerHTML = "<img src='assets/images/plots/" + gallery[id].id + "_plot.png'>";
             });
 
 
