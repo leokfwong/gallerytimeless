@@ -74,15 +74,15 @@ This is important since we want to resize images differently (height vs width).
 @returns {} none */
 function getPaintingDimensions() {
 
-    // Iterate through all paintings in gallery
-    for (let i = 0; i < gallery.length; i++) {
+    // Iterate through all paintings in gallery_json
+    for (let i = 0; i < gallery_json.length; i++) {
 
         // Create image object
         let img = new Image();
 
         // Define source of painting image (where to fetch image file) and data-id.
-        img.setAttribute("data-src", "assets/images/paintings/" + gallery[i].year + "/" + gallery[i].id + "-min.png");
-        img.setAttribute("data-id", gallery[i].id);
+        img.setAttribute("data-src", "assets/images/paintings/" + gallery_json[i].year + "/" + gallery_json[i].id + "-min.png");
+        img.setAttribute("data-id", gallery_json[i].id);
 
         // On image load
         img.onload = function() {
@@ -93,12 +93,12 @@ function getPaintingDimensions() {
             let id = img.getAttribute("data-id");
 
             // Assign orientation based on dimensions
-            gallery[parseInt(id) - 1].imgWidth = width;
-            gallery[parseInt(id) - 1].imgHeight = height;
+            gallery_json[parseInt(id) - 1].imgWidth = width;
+            gallery_json[parseInt(id) - 1].imgHeight = height;
             if (height > width) {
-                gallery[parseInt(id) - 1].orientation = "portrait";
+                gallery_json[parseInt(id) - 1].orientation = "portrait";
             } else {
-                gallery[parseInt(id) - 1].orientation = "landscape";
+                gallery_json[parseInt(id) - 1].orientation = "landscape";
             }
         }
     }
@@ -120,17 +120,17 @@ window.onload = function() {
         let previousYear = 2018;
 
         // Iterate through each painting, starting from the most recent
-        for (let i = gallery.length - 1; i >= 0; i--) {
+        for (let i = gallery_json.length - 1; i >= 0; i--) {
 
             // Create an exhibit for each
             let exhibit = document.createElement("div");
             exhibit.id = "exhibit-" + (i + 1);
-            if (i == gallery.length - 1) {
+            if (i == gallery_json.length - 1) {
                 exhibit.className = "exhibit latest-exhibit";
             } else {
                 exhibit.className = "exhibit";
             }
-            exhibit.setAttribute("data-year", gallery[i].year);
+            exhibit.setAttribute("data-year", gallery_json[i].year);
 
             // Append exhibit to container and set up background image
             document.getElementById("exhibit-container").appendChild(exhibit);
@@ -152,7 +152,7 @@ window.onload = function() {
             painting.id = "exhibit-painting-" + (i + 1);
 
             content.appendChild(painting);
-            painting.innerHTML = "<img data-src='assets/images/paintings/" + gallery[i].year + "/" + gallery[i].id + "-min.png' data-id='" + gallery[i].id + "' data-orientation='" + gallery[i].orientation + "'>";
+            painting.innerHTML = "<img data-src='assets/images/paintings/" + gallery_json[i].year + "/" + gallery_json[i].id + "-min.png' data-id='" + gallery_json[i].id + "' data-orientation='" + gallery_json[i].orientation + "'>";
 
             let enlarge = document.createElement("div");
             enlarge.className = "exhibit-painting-enlarge";
@@ -170,10 +170,10 @@ window.onload = function() {
 
                 console.log("Painting clicked");
                 paintingOverlay.style.display = "flex";
-                largePainting.innerHTML = "<img src='assets/images/paintings/" + gallery[id].year + "/" + gallery[id].id + "-min.png'>";
+                largePainting.innerHTML = "<img src='assets/images/paintings/" + gallery_json[id].year + "/" + gallery_json[id].id + "-min.png'>";
                 let orientation;
 
-                if (((window.innerHeight * 0.8) * gallery[id].imgWidth / gallery[id].imgHeight) > ((0.9) * window.innerWidth)) {
+                if (((window.innerHeight * 0.8) * gallery_json[id].imgWidth / gallery_json[id].imgHeight) > ((0.9) * window.innerWidth)) {
                     orientation = "landscape";
                 } else {
                     orientation = "portrait";
@@ -199,28 +199,28 @@ window.onload = function() {
             title.id = "exhibit-title-" + (i + 1);
             title.className = "exhibit-title";
             descriptionContent.appendChild(title);
-            title.innerHTML = gallery[i].title;
+            title.innerHTML = gallery_json[i].title;
 
             // Create type div
             let type = document.createElement("div");
             type.id = "exhibit-type-" + (i + 1);
             type.className = "exhibit-type";
             descriptionContent.appendChild(type);
-            type.innerHTML = gallery[i].type;
+            type.innerHTML = gallery_json[i].type;
 
             // Create year div
             let year = document.createElement("div");
             year.id = "exhibit-year-" + (i + 1);
             year.className = "exhibit-year";
             descriptionContent.appendChild(year);
-            year.innerHTML = gallery[i].year;
+            year.innerHTML = gallery_json[i].year;
 
             // Create size div
             let size = document.createElement("div");
             size.id = "exhibit-size-" + (i + 1);
             size.className = "exhibit-size";
             descriptionContent.appendChild(size);
-            size.innerHTML = gallery[i].size;
+            size.innerHTML = gallery_json[i].size;
 
             // Create palette div
             let palette = document.createElement("div");
@@ -262,7 +262,7 @@ window.onload = function() {
             note.id = "exhibit-note-" + (i + 1);
             note.className = "exhibit-note";
             descriptionContent.appendChild(note);
-            //note.innerHTML = gallery[i].description;
+            //note.innerHTML = gallery_json[i].description;
             let chart = generateColorChart(i + 1);
             note.appendChild(chart);
 
@@ -285,7 +285,7 @@ window.onload = function() {
             showPlotButton.addEventListener("click", function() {
                 console.log("Plot clicked");
                 paintingOverlay.style.display = "flex";
-                largePainting.innerHTML = "<img src='assets/images/plots/" + gallery[id].id + "_plot.png'>";
+                largePainting.innerHTML = "<img src='assets/images/plots/" + gallery_json[id].id + "_plot.png'>";
             });
 
 
@@ -297,12 +297,12 @@ window.onload = function() {
             }
 
             // Populate dictionary with first painting of each year category
-            if (gallery[i].year != previousYear) {
+            if (gallery_json[i].year != previousYear) {
                 yearDictionary.push({
-                    "year": gallery[i].year,
-                    "anchor": gallery[i].id
+                    "year": gallery_json[i].year,
+                    "anchor": gallery_json[i].id
                 });
-                previousYear = gallery[i].year;
+                previousYear = gallery_json[i].year;
             }
         }
     }
