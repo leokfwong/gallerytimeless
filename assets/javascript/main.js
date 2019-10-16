@@ -111,6 +111,9 @@ var yearDictionary = [];
 /* Set up document on page load. */
 window.onload = function() {
 
+    // Prevent scroll during transition from one painting to another
+    document.body.classList.add("stop-scrolling");
+
     /* Function creates a section for each painting exhibit, which includes all the children divs.
 
     @params {} none
