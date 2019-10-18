@@ -328,22 +328,24 @@ window.onload = function() {
 
     // Temporary lazy load implementation
     let index = Math.floor(scrollTop / height);
-    let img_obj = gallery_json[gallery_json.length - index]
+    if (index > 0) {
+        let img_obj = gallery_json[gallery_json.length - index]
 
-    let img = document.getElementById("gallery-image-" + img_obj.id);
+        let img = document.getElementById("gallery-image-" + img_obj.id);
 
-    if (img.getAttribute("data-src") != null) {
+        if (img.getAttribute("data-src") != null) {
 
-        img.setAttribute("src", img.getAttribute("data-src"));
-        let exhibit = document.getElementById("exhibit-" + parseInt(img.getAttribute("data-id")));
-        exhibit.style.backgroundImage = "url(" + img.getAttribute("data-src") + ")";
+            img.setAttribute("src", img.getAttribute("data-src"));
+            let exhibit = document.getElementById("exhibit-" + parseInt(img.getAttribute("data-id")));
+            exhibit.style.backgroundImage = "url(" + img.getAttribute("data-src") + ")";
 
-        let painting = document.getElementById("exhibit-painting-" + parseInt(img.getAttribute("data-id")))
-        painting.className = "exhibit-painting exhibit-" + img.getAttribute("data-orientation");
+            let painting = document.getElementById("exhibit-painting-" + parseInt(img.getAttribute("data-id")))
+            painting.className = "exhibit-painting exhibit-" + img.getAttribute("data-orientation");
 
-        img.onload = function() {
-            img.removeAttribute("data-src");
-        };
+            img.onload = function() {
+                img.removeAttribute("data-src");
+            };
+        }
     }
 
     /* Function creates sidebar navigation menu with years selection
