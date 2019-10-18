@@ -155,7 +155,7 @@ window.onload = function() {
             painting.id = "exhibit-painting-" + (i + 1);
 
             content.appendChild(painting);
-            painting.innerHTML = "<img data-src='assets/images/paintings/" + gallery_json[i].year + "/" + gallery_json[i].id + "-min.png' data-id='" + gallery_json[i].id + "' data-orientation='" + gallery_json[i].orientation + "'>";
+            painting.innerHTML = "<img id='gallery-image-" + gallery_json[i].id + "' data-src='assets/images/paintings/" + gallery_json[i].year + "/" + gallery_json[i].id + "-min.png' data-id='" + gallery_json[i].id + "' data-orientation='" + gallery_json[i].orientation + "'>";
 
             let enlarge = document.createElement("div");
             enlarge.className = "exhibit-painting-enlarge";
@@ -312,22 +312,6 @@ window.onload = function() {
 
     createExhibits();
 
-    // Lazy load for images
-    [].forEach.call(document.querySelectorAll("img[data-src]"), function(img) {
-
-        img.setAttribute("src", img.getAttribute("data-src"));
-
-        let exhibit = document.getElementById("exhibit-" + parseInt(img.getAttribute("data-id")));
-        exhibit.style.backgroundImage = "url(" + img.getAttribute("data-src") + ")";
-
-        let painting = document.getElementById("exhibit-painting-" + parseInt(img.getAttribute("data-id")))
-        painting.className = "exhibit-painting exhibit-" + img.getAttribute("data-orientation");
-
-        img.onload = function() {
-            img.removeAttribute("data-src");
-        };
-    });
-
     // Close painting overlay button
     document.getElementById("painting-overlay-close").addEventListener("click", function() {
         let overlay = document.getElementById("painting-overlay");
@@ -397,9 +381,9 @@ window.onload = function() {
 
 window.onscroll = function() {
 
-    console.log("Scrolling");
-
     let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+    console.log("Scrolling, position: " + scrollTop);
 
     let exhibitSidebar = document.getElementById("exhibit-nav-sidebar");
     let logoSignature = document.getElementById("logo-signature");
@@ -407,6 +391,26 @@ window.onscroll = function() {
 
     let height = window.innerHeight;
     let width = window.innerWidth;
+
+    // Temporary lazy load implementation
+    let index = Math.floor(scrollTop / height);
+    let img_obj = gallery_json[gallery_json.length - index - 1]
+
+    let img = document.getElementById("gallery-image-" + img_obj.id);
+
+    if (img.getAttribute("data-src") != null) {
+
+        img.setAttribute("src", img.getAttribute("data-src"));
+        let exhibit = document.getElementById("exhibit-" + parseInt(img.getAttribute("data-id")));
+        exhibit.style.backgroundImage = "url(" + img.getAttribute("data-src") + ")";
+
+        let painting = document.getElementById("exhibit-painting-" + parseInt(img.getAttribute("data-id")))
+        painting.className = "exhibit-painting exhibit-" + img.getAttribute("data-orientation");
+
+        img.onload = function() {
+            img.removeAttribute("data-src");
+        };
+    }
 
     if (scrollTop > height / 2) {
 
