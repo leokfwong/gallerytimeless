@@ -452,7 +452,7 @@ window.onscroll = function() {
         } else {
             exhibitSidebar.style.opacity = "1";
             logoSignature.style.opacity = ".42";
-            backToTop.style.background = "rgba(0, 0, 0, .69)";
+            // backToTop.style.background = "rgba(0, 0, 0, .69)";
         }
 
     } else {
