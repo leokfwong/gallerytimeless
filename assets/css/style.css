@@ -164,15 +164,6 @@ img[data-src] {
     font-family: "Stellar";
     letter-spacing: 3vmin;
     color: white;
-    -webkit-animation: textFadeIn 2s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: textFadeIn 2s; /* Firefox < 16 */
-    -ms-animation: textFadeIn 2s; /* Internet Explorer */
-    -o-animation: textFadeIn 2s; /* Opera < 12.1 */
-    animation: textFadeIn 2s;
-}
-@keyframes textFadeIn {
-    from { margin-bottom: 2%; opacity: 0; }
-    to   { margin-bottom: 0; opacity: 1; }
 }
 #exhibit-container {
     width: 100%;
