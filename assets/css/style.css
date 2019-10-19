@@ -329,5 +329,6 @@ img[data-src] {
     cursor: pointer;
 }
 #back-to-top img {
+    opacity: 0.42;
     height: 60%;
 }
