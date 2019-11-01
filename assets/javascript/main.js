@@ -67,45 +67,6 @@ function findIndexPainting(id) {
 
 }
 
-/* Function retrieves dimensions of every painting upon load and assigns an orientation to it (landscape vs. portrait).
-This is important since we want to resize images differently (height vs width).
-
-@params {} none
-@returns {} none */
-function getPaintingDimensions() {
-
-    // Iterate through all paintings in gallery_json
-    for (let i = 0; i < gallery_json.length; i++) {
-
-        // Create image object
-        let img = new Image();
-
-        // Define source of painting image (where to fetch image file) and data-id.
-        img.setAttribute("data-src", "assets/images/paintings/" + gallery_json[i].year + "/" + gallery_json[i].id + "-min.png");
-        img.setAttribute("data-id", gallery_json[i].id);
-
-        // On image load
-        img.onload = function() {
-
-            // Get height and width of image
-            let height = img.height;
-            let width = img.width;
-            let id = img.getAttribute("data-id");
-
-            // Assign orientation based on dimensions
-            gallery_json[parseInt(id) - 1].imgWidth = width;
-            gallery_json[parseInt(id) - 1].imgHeight = height;
-            if (height > width) {
-                gallery_json[parseInt(id) - 1].orientation = "portrait";
-            } else {
-                gallery_json[parseInt(id) - 1].orientation = "landscape";
-            }
-        }
-    }
-}
-
-//getPaintingDimensions();
-
 var yearDictionary = [];
 
 /* Set up document on page load. */
