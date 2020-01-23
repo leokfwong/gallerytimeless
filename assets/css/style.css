@@ -238,9 +238,11 @@ img[data-src] {
 }
 .exhibit-portrait img {
     width: 50%;
+    min-height: 1px;
 }
 .exhibit-landscape img {
     width: 75%;
+    min-height: 1px;
 }
 .exhibit-painting-enlarge {
     padding: 15px;
