@@ -36,21 +36,21 @@ const gallery_json = [{
 }, {
     "id": "006",
     "year": "2008",
-    "title": "006",
+    "title": "Serenity",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
 }, {
     "id": "007",
     "year": "2009",
-    "title": "007",
+    "title": "Walk in the Park",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
 }, {
     "id": "008",
     "year": "2009",
-    "title": "008",
+    "title": "Countryside Snow",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
@@ -64,14 +64,14 @@ const gallery_json = [{
 }, {
     "id": "010",
     "year": "2009",
-    "title": "010",
+    "title": "Dock",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
 }, {
     "id": "011",
     "year": "2009",
-    "title": "011",
+    "title": "Night View of Bridge",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
@@ -148,7 +148,7 @@ const gallery_json = [{
 }, {
     "id": "022",
     "year": "2011",
-    "title": "022",
+    "title": "Portrait of Man",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
@@ -218,7 +218,7 @@ const gallery_json = [{
 }, {
     "id": "032",
     "year": "2013",
-    "title": "032",
+    "title": "Creek",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
@@ -232,14 +232,14 @@ const gallery_json = [{
 }, {
     "id": "034",
     "year": "2014",
-    "title": "034",
+    "title": "Running in Circles",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
 }, {
     "id": "035",
     "year": "2014",
-    "title": "035",
+    "title": "Gathering",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
@@ -281,7 +281,7 @@ const gallery_json = [{
 }, {
     "id": "041",
     "year": "2015",
-    "title": "041",
+    "title": "Portrait",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
@@ -295,7 +295,7 @@ const gallery_json = [{
 }, {
     "id": "043",
     "year": "2015",
-    "title": "043",
+    "title": "Crowd",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
@@ -365,7 +365,7 @@ const gallery_json = [{
 }, {
     "id": "053",
     "year": "2017",
-    "title": "New York",
+    "title": "Rainy Day in New York",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
@@ -379,7 +379,7 @@ const gallery_json = [{
 }, {
     "id": "055",
     "year": "2017",
-    "title": "Title",
+    "title": "Reflection",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
@@ -414,21 +414,21 @@ const gallery_json = [{
 }, {
     "id": "060",
     "year": "2018",
-    "title": "Rural China",
+    "title": "Under the Bridge",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
 }, {
     "id": "061",
     "year": "2018",
-    "title": "Self-portrait",
+    "title": "Self-portrait of Myself",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
 }, {
     "id": "062",
     "year": "2018",
-    "title": "Title",
+    "title": "Self Portrait with a Beret",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
