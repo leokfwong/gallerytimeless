@@ -359,7 +359,23 @@ window.onload = function() {
         scrollToMyDiv(document.getElementById("wrapper"), 2000);
     });
 
+}
 
+function loadImage(img_obj) {
+    let img = document.getElementById("gallery-image-" + img_obj.id);
+    if (img.getAttribute("data-src") != null) {
+
+        img.setAttribute("src", img.getAttribute("data-src"));
+        let exhibit = document.getElementById("exhibit-" + parseInt(img.getAttribute("data-id")));
+        exhibit.style.backgroundImage = "url(" + img.getAttribute("data-src") + ")";
+
+        let painting = document.getElementById("exhibit-painting-" + parseInt(img.getAttribute("data-id")))
+        painting.className = "exhibit-painting exhibit-" + img.getAttribute("data-orientation");
+
+        img.onload = function() {
+            img.removeAttribute("data-src");
+        };
+    }
 }
 
 window.onscroll = function() {
@@ -376,23 +392,15 @@ window.onscroll = function() {
     let width = window.innerWidth;
 
     // Temporary lazy load implementation
-    let index = Math.floor(scrollTop / height);
-    let img_obj = gallery_json[gallery_json.length - index - 1]
-
-    let img = document.getElementById("gallery-image-" + img_obj.id);
-
-    if (img.getAttribute("data-src") != null) {
-
-        img.setAttribute("src", img.getAttribute("data-src"));
-        let exhibit = document.getElementById("exhibit-" + parseInt(img.getAttribute("data-id")));
-        exhibit.style.backgroundImage = "url(" + img.getAttribute("data-src") + ")";
-
-        let painting = document.getElementById("exhibit-painting-" + parseInt(img.getAttribute("data-id")))
-        painting.className = "exhibit-painting exhibit-" + img.getAttribute("data-orientation");
-
-        img.onload = function() {
-            img.removeAttribute("data-src");
-        };
+    let position = Math.floor(scrollTop / height);
+    let up_img_obj = gallery_json[(gallery_json.length - position + 1)];
+    let down_img_obj = gallery_json[(gallery_json.length - position - 1)];
+    let up_img, down_img;
+    if (up_img_obj != undefined) {
+        loadImage(up_img_obj);
+    }
+    if (down_img_obj != undefined) {
+        loadImage(down_img_obj);
     }
 
     if (scrollTop > height / 2) {
