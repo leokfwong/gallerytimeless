@@ -1,3 +1,5 @@
+const paintings_url = "https://raw.githubusercontent.com/leokfwong/gallerytimeless/master/assets/images/paintings/"
+
 function generateColorChart(id) {
 
     let idx = findIndexPainting(id);
@@ -112,7 +114,7 @@ window.onload = function() {
             painting.id = "exhibit-painting-" + (i + 1);
 
             content.appendChild(painting);
-            painting.innerHTML = "<img id='gallery-image-" + gallery_json[i].id + "' data-src='assets/images/paintings/" + gallery_json[i].year + "/" + gallery_json[i].id + "-min.png' data-id='" + gallery_json[i].id + "' data-orientation='" + gallery_json[i].orientation + "'>";
+            painting.innerHTML = "<img id='gallery-image-" + gallery_json[i].id + "' data-src='" + paintings_url + gallery_json[i].year + "/" + gallery_json[i].id + "-min.png' data-id='" + gallery_json[i].id + "' data-orientation='" + gallery_json[i].orientation + "'>";
 
             let enlarge = document.createElement("div");
             enlarge.className = "exhibit-painting-enlarge";
@@ -130,7 +132,7 @@ window.onload = function() {
 
                 console.log("Painting clicked");
                 paintingOverlay.style.display = "flex";
-                largePainting.innerHTML = "<img src='assets/images/paintings/" + gallery_json[id].year + "/" + gallery_json[id].id + "-min.png'>";
+                largePainting.innerHTML = "<img src='" + paintings_url + gallery_json[id].year + "/" + gallery_json[id].id + "-min.png'>";
                 let orientation;
 
                 if (((window.innerHeight * 0.8) * gallery_json[id].imgWidth / gallery_json[id].imgHeight) > ((0.9) * window.innerWidth)) {
