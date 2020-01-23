@@ -54,17 +54,13 @@ function generateColorChart(id) {
 }
 
 function findIndexPainting(id) {
-
     for (let i = 0; i < colorsRGB.length; i++) {
-
         if (parseInt(colorsRGB[i].id) == id) {
             return (i);
         } else {
             //console.log("Error!! Couldn't find.");
         }
-
     }
-
 }
 
 var yearDictionary = [];

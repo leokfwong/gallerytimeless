@@ -124,6 +124,10 @@ img[data-src] {
     src: url(../font/Stellar/Stellar-Regular.eot),
     url(../font/Stellar/Stellar-Regular.otf);
 }
+@font-face {
+    font-family: Nicollia;
+    src: url(../font/Nicollia/Nicollia-Italic.otf);
+}
 #wrapper {
     width: 100%;
     height: 100%;
@@ -159,10 +163,17 @@ img[data-src] {
     justify-content: center;
     align-items: center;
 }
-#banner {
+#banner-title {
     font-size: 15vmin;
     font-family: "Stellar";
     letter-spacing: 3vmin;
+    color: white;
+}
+#banner-author {
+    padding: 5%;
+    text-align: center;
+    font-size: 200%;
+    font-family: "Nicollia";
     color: white;
 }
 #exhibit-container {
@@ -320,8 +331,8 @@ img[data-src] {
 
 #back-to-top {
     display: none;
-    width: 7vmin;
-    height: 7vmin;
+    width: 64px;
+    height: 60px;
     position: fixed;
     bottom: 2%;
     right: 2%;
