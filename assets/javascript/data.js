@@ -470,12 +470,19 @@ const gallery_json = [{
 }, {
     "id": "068",
     "year": "2019",
-    "title": "Billy Graham Portrait",
+    "title": "Ferris Wheel Old Port",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
 }, {
     "id": "069",
+    "year": "2020",
+    "title": "Billy Graham Portrait",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting",
+    "orientation": "portrait"
+}, {
+    "id": "070",
     "year": "2020",
     "title": "Cheung Chau at Night 2",
     "size": "16\" x 20\" (40cm x 50cm)",
