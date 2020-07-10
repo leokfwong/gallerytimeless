@@ -456,7 +456,28 @@ const gallery_json = [{
 }, {
     "id": "066",
     "year": "2019",
-    "title": "Cheung Chau Nightime #1",
+    "title": "Cheung Chau at Night 1",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting",
+    "orientation": "portrait"
+}, {
+    "id": "067",
+    "year": "2019",
+    "title": "Winter St-Denis Steet",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting",
+    "orientation": "portrait"
+}, {
+    "id": "068",
+    "year": "2019",
+    "title": "Billy Graham Portrait",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting",
+    "orientation": "portrait"
+}, {
+    "id": "069",
+    "year": "2020",
+    "title": "Cheung Chau at Night 2",
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "portrait"
