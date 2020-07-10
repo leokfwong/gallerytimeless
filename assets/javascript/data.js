@@ -453,4 +453,11 @@ const gallery_json = [{
     "size": "16\" x 20\" (40cm x 50cm)",
     "type": "Oil painting",
     "orientation": "landscape"
+}, {
+    "id": "066",
+    "year": "2019",
+    "title": "Cheung Chau Nightime #1",
+    "size": "16\" x 20\" (40cm x 50cm)",
+    "type": "Oil painting",
+    "orientation": "portrait"
 }]

@@ -9,14 +9,17 @@ from mpl_toolkits.mplot3d import Axes3D
 from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
 
+# Get current working directory
+cwd = os.getcwd()
+
 tmp = []
 json_array = []
 
 # Iterate through every folder to fetch images
-for year in range(2008, 2020):
+for year in range(2008, 2021):
     
     # Set up path to image and get list of all image names within each
-    path = "C:/Users/Leo/Documents/GitHub/gallerytimeless/assets/images/paintings/" + str(year) + "/"
+    path = cwd + "/assets/images/paintings/" + str(year) + "/"
     pictures = os.listdir(path)
 
     # For each image
@@ -64,9 +67,9 @@ final = ""
 for i in range(0, len(json_array)):
     
     # Set up condition to properly format string
-    if (i == 0):
+    if i == 0:
         final = "[" + final + json_array[i] + ", "
-    elif (i+1 == len(json_array)):
+    elif i+1 == len(json_array):
         final = final + json_array[i] + "]"
     else:
         final = final + json_array[i] + ", "
@@ -75,5 +78,6 @@ for i in range(0, len(json_array)):
 final = "var paletteRGB = " + final
 
 # Write string to .json file
-with open("C:/Users/Leo/Documents/GitHub/gallerytimeless/assets/images/palette.json", "w") as outfile:
+print("Writing to file...")
+with open(cwd + "/assets/json/palette.json", "w") as outfile:
     outfile.write(final)

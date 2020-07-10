@@ -317,7 +317,7 @@ window.onload = function() {
         let sidebar = document.getElementById("exhibit-nav-sidebar");
 
         // Itereate through years of activity
-        for (let i = 2019; i >= 2008; i--) {
+        for (let i = 2020; i >= 2008; i--) {
 
             (function() {
 
