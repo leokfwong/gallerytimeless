@@ -286,12 +286,13 @@ img[data-src] {
     width: 70%;
 }
 .exhibit-title {
-    font-family: 'Raleway', sans-serif;
-    font-size: 250%;
+    font-family: 'Stellar', sans-serif;
+    font-size: 275%;
     margin-bottom: 20px;
 }
 .exhibit-type, .exhibit-year, .exhibit-size {
     font-size: 115%;
+    padding-bottom: 5px;
 }
 .exhibit-palette {
     margin-top: 20px;
